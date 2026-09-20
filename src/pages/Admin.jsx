@@ -7,6 +7,7 @@ import { categories } from '../data/mockData';
 import { idbLoadAll } from '../utils/imageDB';
 import { storage } from '../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ADMIN_PASSWORD } from '../config';
 
 const isFirebaseConfigured = !!import.meta.env.VITE_FIREBASE_PROJECT_ID;
 const Admin = () => {
@@ -35,7 +36,7 @@ const Admin = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'rima@123') setIsLoggedIn(true);
+    if (password === ADMIN_PASSWORD) setIsLoggedIn(true);
     else alert('Incorrect Password!');
   };
 

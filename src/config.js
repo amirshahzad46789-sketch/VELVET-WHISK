@@ -1,0 +1,3 @@
+﻿// Admin Configuration
+export const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || '123arhammm';
+

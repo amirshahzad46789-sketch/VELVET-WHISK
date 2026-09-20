@@ -6,6 +6,7 @@ import useStore from '../store/useStore';
 import { ShoppingBag, Star, PlayCircle, X, Check, Edit3, Upload, Save } from 'lucide-react';
 import { storage } from '../firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ADMIN_PASSWORD } from '../config';
 
 const isFirebaseConfigured = !!import.meta.env.VITE_FIREBASE_PROJECT_ID;
 
@@ -129,7 +130,7 @@ const Home = () => {
 
   const submitQePass = (e) => {
     e.preventDefault();
-    if (qePassword === 'rima@123') {
+    if (qePassword === ADMIN_PASSWORD) {
       setQeForm({
         image: resolveImage(qeProduct, localImages),
         price: qeProduct.price,
@@ -902,7 +903,7 @@ const Home = () => {
               {ksStep === 'pass' ? (
                 <form onSubmit={(e) => {
                   e.preventDefault();
-                  if (ksPassword === 'rima@123') {
+                  if (ksPassword === ADMIN_PASSWORD) {
                     setKsStep('select');
                     setKsError('');
                   } else {
