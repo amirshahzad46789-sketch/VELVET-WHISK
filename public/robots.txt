@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://velvet-whisk-rosy.vercel.app/sitemap.xml
+
